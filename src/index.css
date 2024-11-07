@@ -1,0 +1,73 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --main-color: #8afb81;
+  --secondary-color: #ffff1c;
+  --main-bg-light-color: #faffd1;
+  --main-bg-dark-color: #17160d;
+
+}
+
+body {
+  font-family: BinkoEng;
+  background-color: var(--main-bg-light-color);
+  transition: .5s;
+}
+
+@font-face {
+  font-family: BinkoEng;
+  src: url('./assets/fonts/Love_Ya_Like_A_Sister/LoveYaLikeASister-Regular.ttf');
+}
+
+@font-face {
+  font-family: Binko2Eng;
+  src: url('./assets/fonts/Leckerli_One/LeckerliOne-Regular.ttf');
+}
+
+@font-face {
+  font-family: BinkoAra;
+  src: url('./assets/fonts/Markazi_Text/static/MarkaziText-SemiBold.ttf');
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+input,
+button {
+  border: none;
+  outline: none;
+}
+
+a.dark {
+  color: white;
+}
+
+a.light {
+  color: black;
+}
+
+a.active {
+  color: var(--main-color);
+}
+
+.mark {
+  transform: rotate(270deg);
+  z-index: -100;
+  transition: .3s;
+}
+
+a .mark {
+  display: none;
+}
+
+.active .mark {
+  display: block;
+
+}

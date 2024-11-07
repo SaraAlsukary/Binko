@@ -1,0 +1,29 @@
+.inputStyle {
+    display: block;
+    height: 50px;
+    width: 331px;
+    background-color: var(--main-color);
+    border-radius: 16px;
+    font-weight: bold;
+}
+
+.inputStyle.english {
+    font-family: BinkoEng;
+    padding-left: 10px;
+}
+
+.inputStyle.arabic {
+    font-family: BinkoAra;
+    padding-right: 10px;
+
+}
+
+input[type='submit'].inputStyle.english {
+    font-family: Binko2Eng;
+    font-size: 20px;
+}
+
+input[type='submit'].inputStyle.arabic {
+    font-family: BinkoAra;
+    font-size: 20px;
+}

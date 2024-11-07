@@ -1,0 +1,85 @@
+.landing {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    font-family: BinkoEng;
+    margin-top: 30px;
+
+}
+
+.landing .left {
+    width: 500px;
+
+}
+
+
+.landing .left button {
+    font-size: 22px;
+    text-align: center;
+    cursor: pointer;
+    transform: translateX(-50%);
+}
+
+.landing .left button.arabic {
+    margin-right: 50%;
+}
+
+.landing .left button.english {
+    font-family: Binko2Eng;
+    margin-left: 50%;
+}
+
+.landing p {
+    font-size: 21px;
+
+}
+
+
+
+.landing .left h2 {
+    font-size: 40px;
+    color: var(--main-color);
+}
+
+.landing .right {
+    width: 400px;
+}
+
+@media (max-width:767px) {
+    .landing {
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .landing .left,
+    .landing .right {
+        margin: 0;
+    }
+
+
+
+    .landing .left p {
+        text-align: center;
+        margin-top: 40px;
+        width: 100%;
+    }
+
+
+    .landing .left button.arabic {
+        margin-right: 37%;
+    }
+
+    .landing .left button.english {
+        margin-left: 50%;
+    }
+}
+
+p.arabic {
+    font-family: BinkoAra;
+    font-size: 25px;
+}
+
+p.english {
+    font-family: BinkoEng;
+}
