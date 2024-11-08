@@ -85,3 +85,18 @@
     }
 
 }
+
+@media (max-width:767px) {
+    .booCard {
+        width: 368px;
+    }
+
+    .booCard .pic {
+        height: 230px;
+        width: 150px;
+    }
+
+    .booCard .text {
+        width: 180px;
+    }
+}

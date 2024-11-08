@@ -1,3 +1,7 @@
+.NewsContainer {
+    padding: 100px 0;
+}
+
 .news {
     position: relative;
     margin-top: 30px;
@@ -147,7 +151,13 @@ hr {
     background-color: var(--main-color);
 }
 
-@media (max-width:767px) {
+@media (min-width:393px)and (max-width:767px) {
+    .news2 .pic2 {
+        width: 500px;
+    }
+}
+
+@media (max-width:392px) {
     .news2 {
         flex-direction: column;
     }
@@ -157,6 +167,20 @@ hr {
         left: 0;
         top: 100%;
         margin-top: 20px;
+    }
+
+    .cards2 .left {
+        width: 370px;
+    }
+
+    .news2 .pic2,
+    .news2 .cards2 {
+        width: 370px;
+    }
+
+
+    .news2 .cards2 {
+        right: 0;
     }
 
     .cards2 .left::after {
@@ -229,9 +253,34 @@ hr {
     left: 50%;
 }
 
-@media (max-width:767px) {
+@media (max-width:392px) {
     .pic3 {
-        width: 540px;
+        width: 370px;
+        margin-top: 250px;
+    }
+
+    .pic3 p {
+        width: 300px;
+        font-size: 14px;
+    }
+
+    .pic3 span {
+
+        height: 150px;
+    }
+}
+
+@media (min-width:393px) {
+    .cards2 .left {
+        width: 500px;
+    }
+
+    .news2 .pic {
+        width: 500px;
+    }
+
+    .pic3 {
+        width: 500px;
         margin-top: 250px;
     }
 

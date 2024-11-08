@@ -29,6 +29,16 @@
         width: 77%;
 
     }
+
+    .headingContainer h2 {
+        margin: 0;
+        left: 0;
+    }
+
+    [data-lang='English'] .headingContainer h2 {
+        font-size: 30px;
+
+    }
 }
 
 .headingContainer.arabic h2::after {

@@ -30,11 +30,11 @@
 }
 
 @media (min-width:992px) {
-    .headerContainer .icon.english {
+    [data-lang='English'] .headerContainer .icon {
         left: 0;
     }
 
-    .headerContainer .icon.arabic {
+    [data-lang='Arabic'] .headerContainer .icon {
         right: 0;
     }
 }
@@ -61,11 +61,11 @@
 }
 
 @media (min-width:768px)and (max-width:991px) {
-    .icon.english {
+    [data-lang='English'] .icon {
         left: 0;
     }
 
-    .icon.arabic {
+    [data-lang='English'] .icon.arabic {
         right: 0;
     }
 }

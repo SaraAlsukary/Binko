@@ -52,12 +52,15 @@
         align-items: center;
     }
 
-    .landing .left,
+
     .landing .right {
-        margin: 0;
+        width: 390px;
     }
 
-
+    .landing .left {
+        width: 300px;
+        position: relative;
+    }
 
     .landing .left p {
         text-align: center;
@@ -66,12 +69,12 @@
     }
 
 
-    .landing .left button.arabic {
-        margin-right: 37%;
-    }
 
+    .landing .left button.arabic,
     .landing .left button.english {
-        margin-left: 50%;
+        margin: 0;
+        left: 50%;
+        position: absolute;
     }
 }
 

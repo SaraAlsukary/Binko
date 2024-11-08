@@ -4,7 +4,6 @@ import Moon from '@assets/svgs/moon.svg?react';
 import BurgerBlack from '@assets/svgs/burgerMenuBlack.svg?react';
 import BurgerWhite from '@assets/svgs/burgerMenuWhite.svg?react';
 import Search from '@components/feedback/Search/Search';
-// import Search from '@assets/svgs/search.svg?react';
 import SearchGreen from '@assets/svgs/searchGreen.svg?react';
 import { changeThemeToDark, changeThemeToLight } from '@store/themeSlice/themeSlice'
 import Sun from '@assets/svgs/sun.svg?react'
@@ -22,52 +21,29 @@ const Header = () => {
     const { language } = useAppSelector(state => state.language);
     const { authState } = useAppSelector(state => state.auth)
     const location: any = useLocation();
+
     const showToggleHandler = () => {
         setToggle(!toggle);
     }
+
     const changeToDark = () => {
         dispatch(changeThemeToDark());
-        document.body.style.backgroundColor = 'var(--main-bg-dark-color)';
-        document.body.style.color = '#fff';
+
     }
     const changeToLight = () => {
         dispatch(changeThemeToLight())
-        document.body.style.backgroundColor = 'var(--main-bg-light-color)';
-        document.body.style.color = '#000';
+
     }
     const changeToEnglish = () => {
         dispatch(changeLanguageToEnglish());
-        document.body.style.direction = 'ltr';
 
 
     }
 
     const changeToArabic = () => {
         dispatch(changeLanguageToArabic());
-        document.body.style.direction = 'rtl';
     }
-    const changeThemeColor = () => {
-        if (theme === 'Dark') {
-            document.body.style.backgroundColor = 'var(--main-bg-dark-color)';
-            document.body.style.color = '#fff';
-        } else {
-            document.body.style.backgroundColor = 'var(--main-bg-light-color)';
-            document.body.style.color = '#000';
-        }
-    }
-    const changeLanguage = () => {
-        if (language === 'English') {
-            document.body.style.direction = 'ltr';
-            document.body.style.fontFamily = 'BinkoEng';
-        } else {
-            document.body.style.direction = 'rtl';
-            document.body.style.fontFamily = 'BinkoAra';
 
-
-        }
-    }
-    changeLanguage();
-    changeThemeColor();
     return (
         <header >
             <Container className={theme === 'Light' ? `${headerContainer}` : `${headerContainer} ${dark}`} >
@@ -89,7 +65,7 @@ const Header = () => {
                                 }} />
                             </div>
                         </NavLink></li>
-                        <li className={theme === 'Dark' ? `${dark}` : ''} ><NavLink to='/' className={theme === 'Dark' ? `dark` : `light`} >{language === 'English' ? 'Home' : 'الرئيسية'}</NavLink></li>
+                        <li className={theme === 'Dark' ? `${dark}` : ''} ><NavLink to='/Binko/home' className={theme === 'Dark' ? `dark` : `light`} >{language === 'English' ? 'Home' : 'الرئيسية'}</NavLink></li>
                         <li className={theme === 'Dark' ? `${dark}` : ''}><NavLink to='news' className={theme === 'Dark' ? `dark` : `light`}  >{language === 'English' ? 'News' : 'الأخبار'}</NavLink></li>
                         <li className={theme === 'Dark' ? `${dark}` : ''}><NavLink to='categories' className={theme === 'Dark' ? `dark` : `light`} >{language === 'English' ? 'Categories' : 'التصنيفات'}</NavLink></li>
                         <li className={theme === 'Dark' ? `${dark}` : ''} ><NavLink to='about' className={theme === 'Dark' ? `dark` : `light`} >{language === 'English' ? 'About' : 'عنا'}</NavLink></li>
