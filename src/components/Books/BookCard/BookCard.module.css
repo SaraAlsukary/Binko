@@ -11,7 +11,7 @@
     border: 2px solid var(--main-color);
 }
 
-.booCard.arabic {
+[data-lang='Arabic'] .booCard {
     direction: rtl;
     font-family: binkoara;
 }
@@ -27,7 +27,7 @@
     left: 21px;
 }
 
-.booCard.arabic .pic {
+[data-lang='Arabic'] .booCard .pic {
     right: 21px;
 }
 
@@ -45,7 +45,7 @@
 
 }
 
-.booCard.booCard.arabic .text {
+[data-lang='Arabic'] .booCard .text {
     bottom: -9px;
 }
 
@@ -57,52 +57,8 @@
     color: var(--secondary-color);
 }
 
-@media (max-width:392px) {
-    .booCard {
-        width: 363px;
-        position: relative;
-    }
 
-    .booCard .pic {
-        width: 250px;
-        position: absolute;
-        left: 50%;
-        height: 325px;
-        transform: translateX(-50%);
-    }
-
-    .booCard .text {
-        padding: 0;
-        bottom: 9px;
-        position: absolute;
-        text-align: center;
-    }
-
-    .booCard .btnCard {
-        position: relative;
-        width: 100%;
-        height: 43px;
-    }
-
-    .booCard .text button {
-        left: 50%;
-        position: absolute;
-        transform: translate(-50%, -50%);
-        top: 50%;
-    }
-
-    .booCard.arabic .pic {
-        right: 8px;
-    }
-
-    .booCard.arabic .text {
-        right: 8px;
-        position: absolute;
-        top: 311px;
-    }
-}
-
-@media (min-width:391px) and (max-width:991px) {
+@media (min-width:393px) and (max-width:991px) {
     .booCard {
         width: 250px;
         position: relative;
@@ -138,13 +94,65 @@
         top: 50%;
     }
 
-    .booCard.arabic .pic {
-        right: 8px;
+    [data-lang='Arabic'] .booCard .pic {
+        right: 46%;
+        transform: translateX(50%);
     }
 
-    .booCard.arabic .text {
+    [data-lang='Arabic'] .booCard .text {
         right: 8px;
         position: absolute;
-        top: 311px;
+        top: 328px;
+    }
+}
+
+@media (max-width:392px) {
+    .booCard {
+        width: 363px;
+        position: relative;
+    }
+
+    .booCard .pic {
+        width: 250px;
+        position: absolute;
+        right: 50%;
+        height: 325px;
+        left: initial;
+        transform: translateX(50%);
+    }
+
+    [data-lang='Arabic'] .booCard .pic {
+        right: 50%;
+        transform: translateX(50%);
+    }
+
+    .booCard .text {
+        padding: 0;
+        bottom: 9px;
+        position: absolute;
+        text-align: center;
+    }
+
+    .booCard .btnCard {
+        position: relative;
+        width: 100%;
+        height: 43px;
+    }
+
+    .booCard .text button {
+        left: 50%;
+        position: absolute;
+        transform: translate(-50%, -50%);
+        top: 50%;
+    }
+
+    /* [data-lang='Arabic'] .booCard .pic {
+        right: 8px;
+    } */
+
+    [data-lang='Arabic'] .booCard .text {
+        right: 8px;
+        position: absolute;
+        top: 350px;
     }
 }

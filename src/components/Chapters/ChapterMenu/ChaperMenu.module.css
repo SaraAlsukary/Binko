@@ -173,3 +173,22 @@
 .up .listMenu.up ul li .icons .activeIcon {
     right: 30px;
 }
+
+@media (max-width:392px) {
+    .up .bookUp {
+        flex-direction: column;
+        justify-content: initial;
+        align-items: initial;
+    }
+
+    .up .listMenu {
+        position: absolute;
+        bottom: -62px;
+        left: 0;
+        width: 100%;
+    }
+
+    .chapterList {
+        width: 93%;
+    }
+}

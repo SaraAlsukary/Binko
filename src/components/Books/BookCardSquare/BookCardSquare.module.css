@@ -13,7 +13,7 @@
     cursor: pointer;
 }
 
-.booCard.arabic {
+[data-lang='Arabic'] .booCard {
     direction: rtl;
     font-family: binkoara;
 }
@@ -49,7 +49,7 @@
     width: 250px;
 }
 
-.booCard.arabic .text {
+[data-lang='Arabic'] .booCard .text {
     direction: rtl;
     margin-right: 20px;
     left: 0;

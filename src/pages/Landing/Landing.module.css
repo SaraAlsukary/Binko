@@ -20,11 +20,11 @@
     transform: translateX(-50%);
 }
 
-.landing .left button.arabic {
+[data-lang='Arabic'] .landing .left button {
     margin-right: 50%;
 }
 
-.landing .left button.english {
+[data-lang='English'] .landing .left button {
     font-family: Binko2Eng;
     margin-left: 50%;
 }
@@ -70,8 +70,8 @@
 
 
 
-    .landing .left button.arabic,
-    .landing .left button.english {
+    [data-lang='Arabic'] .landing .left button,
+    [data-lang='English'] .landing .left button {
         margin: 0;
         left: 50%;
         position: absolute;

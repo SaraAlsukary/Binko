@@ -15,7 +15,7 @@ const ChapterMenu = () => {
     const { chapters, books } = useAppSelector(state => state);
     const bookInfo = books.find(book => book.id == param.id);
     const chapterIndex = parseInt(param.idChapter);
-    const chaptersList = chapters.map((chapter, idx) => <li className={idx === chapterIndex ? `${active}` : ""} key={chapter.id} onClick={() => navigate(`/books/${param.id}/${idx}`)}>{chapter.title}</li>)
+    const chaptersList = chapters.map((chapter, idx) => <li className={idx === chapterIndex ? `${active}` : ""} key={chapter.id} onClick={() => navigate(`/Binko/books/${param.id}/${idx}`)}>{chapter.title}</li>)
     const activeHandler = () => {
         var el = document.getElementById('list');
         el?.classList.toggle(active);
@@ -30,10 +30,10 @@ const ChapterMenu = () => {
             <div className={language === 'English' ? `${up} ${english}` : `${up}`}>
                 <div className={bookUp}>
                     <div className={book}>
-                        <div onClick={() => navigate(`/books/${bookInfo?.id}`)} className={photo}>
+                        <div onClick={() => navigate(`/Binko/books/${bookInfo?.id}`)} className={photo}>
                             <img src={bookInfo?.img} alt="" />
                         </div>
-                        <div onClick={() => navigate(`/books/${bookInfo?.id}`)} className={text}>
+                        <div onClick={() => navigate(`/Binko/books/${bookInfo?.id}`)} className={text}>
                             <div className={title}>
                                 {bookInfo?.title}
                             </div>

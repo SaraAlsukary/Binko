@@ -100,35 +100,7 @@
 
 }
 
-@media (max-width:392px) {
-    .cont {
-        position: relative;
-    }
 
-    .pic {
-        height: 228px;
-        width: 370px;
-        left: 50%;
-        position: absolute;
-        transform: translateX(-50%);
-        top: -84px;
-    }
-
-    .parag::before,
-    .parag::after {
-        display: none;
-    }
-
-    .parag {
-        width: 370px;
-        height: 242px;
-        top: 144px;
-        right: 50%;
-        position: absolute;
-        transform: translateX(50%);
-        text-align: center;
-    }
-}
 
 @media (min-width:393px) and (max-width:767px) {
     .cont {
@@ -153,6 +125,38 @@
         height: 242px;
         top: 144px;
         right: 50%;
+        text-align: center;
+    }
+}
+
+@media (max-width:392px) {
+    .cont {
+        position: relative;
+    }
+
+    .pic {
+        height: 228px;
+        width: 370px;
+        position: absolute;
+        left: initial;
+        right: 50%;
+        top: -84px;
+        transform: translateX(50%);
+    }
+
+
+    .parag::before,
+    .parag::after {
+        display: none;
+    }
+
+    .parag {
+        width: 370px;
+        height: 242px;
+        top: 144px;
+        right: 50%;
+        position: absolute;
+        transform: translateX(50%);
         text-align: center;
     }
 }

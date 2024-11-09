@@ -27,7 +27,7 @@ const Chapters = () => {
         } else {
             setDisNext(false);
             prevChapter = index - 1;
-            navigate(`/books/${param.id}/${prevChapter}`);
+            navigate(`/Binko/books/${param.id}/${prevChapter}`);
 
         }
 
@@ -46,7 +46,7 @@ const Chapters = () => {
             setDisPrev(false);
 
             nextChapter = index + 1;
-            navigate(`/books/${param.id}/${nextChapter}`);
+            navigate(`/Binko/books/${param.id}/${nextChapter}`);
 
         }
 

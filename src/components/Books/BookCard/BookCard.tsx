@@ -1,15 +1,13 @@
 import { Button } from '@components/feedback';
 import styles from './BookCard.module.css';
 import { TBooks } from '@customtypes/booksType';
-import { useAppSelector } from '@hooks/app';
 import { useNavigate } from 'react-router-dom';
-const { pic, text, btnCard, booCard, arabic } = styles;
+const { pic, text, btnCard, booCard } = styles;
 const BookCard = ({ img, desc, Author, title, id }: TBooks) => {
-    const { language } = useAppSelector(state => state.language);
     const navigate = useNavigate();
 
     return (
-        <div onClick={() => navigate(`${id}`)} className={language === 'English' ? `${booCard}` : `${booCard} ${arabic}`} >
+        <div onClick={() => navigate(`${id}`)} className={booCard} >
             <div className={pic}>
                 <img src={img} alt="" />
             </div>
