@@ -4,7 +4,7 @@
     justify-content: center;
     align-items: center;
     width: 270px;
-    height: 536px;
+    height: 470px;
     cursor: pointer;
     position: relative;
     border-radius: 12px;
@@ -13,15 +13,15 @@
 
 [data-lang='Arabic'] .booCard {
     direction: rtl;
-    font-family: binkoara;
+    font-family: binkoAra;
 }
+
 
 
 .booCard .pic {
     position: absolute;
     height: 300px;
     width: 200px;
-    margin-bottom: 20px;
     padding: 10px;
     top: 9px;
     left: 21px;
@@ -34,19 +34,89 @@
 .booCard .pic img {
     position: absolute;
     width: 100%;
+    border: 2px solid var(--secondary-color);
     height: 100%;
 }
 
 .booCard .text {
-    padding: 20px;
     position: absolute;
-    bottom: -15px;
-    left: 11px;
+    width: 100%;
+    height: 100%;
 
 }
 
+/* 
 [data-lang='Arabic'] .booCard .text {
     bottom: -9px;
+} */
+
+
+
+.booCard .text .paraga {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    border-radius: 12px;
+    position: absolute;
+    left: 45%;
+    transition: .3s;
+    top: 50%;
+    opacity: 0;
+    transform: translate(-50%, -50%);
+}
+
+[data-theme='Dark'] .booCard .text .paraga {
+    background-color: rgba(0, 0, 0, 0.6);
+    color: #ffffff;
+}
+
+[data-theme='Light'] .booCard .text .paraga {
+    background-color: rgba(0, 0, 0, 0.6);
+    color: #ffffff;
+}
+
+.booCard:hover .text .paraga {
+    opacity: 1;
+    left: 50%;
+}
+
+.booCard:hover .text .paraga .btnCard {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.booCard:hover .text .paraga+.info {
+    display: none;
+
+}
+
+.booCard .text .info {
+    position: absolute;
+    bottom: 28px;
+    left: 50%;
+    transition: .3s;
+    transform: translateX(-50%);
+    width: 100%;
+    text-align: center;
+}
+
+
+.booCard .text .info .btnCard {
+    margin-top: 20px;
+}
+
+.booCard .text button {
+    width: 70%;
+}
+
+.booCard .text .paraga p {
+    width: 196px;
 }
 
 .booCard .text h3 {
@@ -66,6 +136,7 @@
         transform: translateX(-50%);
     }
 
+    /*
     .booCard .pic {
         width: 205px;
         position: absolute;
@@ -103,7 +174,7 @@
         right: 8px;
         position: absolute;
         top: 328px;
-    }
+    } */
 }
 
 @media (max-width:392px) {
@@ -146,9 +217,7 @@
         top: 50%;
     }
 
-    /* [data-lang='Arabic'] .booCard .pic {
-        right: 8px;
-    } */
+
 
     [data-lang='Arabic'] .booCard .text {
         right: 8px;
