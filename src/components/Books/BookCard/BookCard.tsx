@@ -9,12 +9,12 @@ const BookCard = ({ img, desc, Author, title, id }: TBooks) => {
     const { language } = useAppSelector(state => state.language);
 
     return (
-        <div onClick={() => navigate(`${id}`)} className={booCard} >
+        <div className={booCard} >
             <div className={pic}>
                 <img src={img} alt="" />
             </div>
             <div className={text}>
-                <div className={paraga}>
+                <div onClick={() => navigate(`${id}`)} className={paraga}>
                     <h3>{title}</h3>
                     <span>{Author}</span>
                     <p>{desc}</p>
