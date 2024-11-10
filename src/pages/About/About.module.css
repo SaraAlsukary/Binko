@@ -75,61 +75,13 @@
     }
 }
 
-@media (max-width:768px) {
-
-    .pic {
-        height: 228px;
-        right: 0;
-        width: 370px;
-        top: -84px;
-    }
-
-    .parag::before,
-    .parag::after {
-        display: none;
-    }
-
-    .parag {
-        width: 370px;
-        height: 242px;
-        top: 144px;
-        right: 12px;
-        text-align: center;
-    }
-
-
-}
 
 
 
-@media (min-width:393px) and (max-width:767px) {
-    .cont {
-        height: 200px;
-    }
-
-    .pic {
-        height: 228px;
-        left: 50%;
-        position: absolute;
-        transform: translateX(-50%);
-        width: 370px;
-        top: -84px;
-    }
 
 
+@media (max-width:767px) {
 
-    .parag {
-        position: absolute;
-        transform: translateX(50%);
-        width: 370px;
-        height: 242px;
-        top: 144px;
-        right: 50%;
-        text-align: center;
-    }
-}
-
-@media (max-width:392px) {
     .cont {
         position: relative;
     }

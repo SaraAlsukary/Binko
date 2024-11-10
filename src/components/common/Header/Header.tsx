@@ -51,7 +51,7 @@ const Header = () => {
     return (
         <header >
             <Container className={headerContainer} >
-                <div className={icon}><NavLink to='/'> <LogoIcon language={language} /></NavLink></div>
+                <div className={icon}><NavLink to='/'> <LogoIcon /></NavLink></div>
                 <Search className="showInput" isThereNavigate={true} checkLocate={location.pathname === '/booksSearch' ? true : false} />
 
                 <nav className={navStyle} >

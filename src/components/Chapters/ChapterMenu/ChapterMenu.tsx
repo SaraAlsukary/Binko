@@ -7,7 +7,7 @@ import BookMarkWhite from '@assets/svgs/bookMarkWhite.svg?react';
 import { useAppSelector } from '@hooks/app';
 
 import { useNavigate, useParams } from 'react-router-dom';
-const { up, text, bookUp, english, book, listMenu, icon, activeIcon, active, icons, chapterList, photo, title, author, arrow } = style;
+const { up, text, bookUp, book, listMenu, icon, activeIcon, active, icons, chapterList, photo, title, author, arrow } = style;
 
 const ChapterMenu = () => {
     const navigate = useNavigate();
@@ -27,7 +27,7 @@ const ChapterMenu = () => {
     }
     return (
         <>
-            <div className={language === 'English' ? `${up} ${english}` : `${up}`}>
+            <div className={up}>
                 <div className={bookUp}>
                     <div className={book}>
                         <div onClick={() => navigate(`/Binko/books/${bookInfo?.id}`)} className={photo}>

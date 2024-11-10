@@ -146,6 +146,10 @@
     cursor: pointer;
 }
 
+.closeIcon {
+    display: none;
+}
+
 @media (max-width: 1300px) {
 
     .search {
@@ -170,7 +174,8 @@
     }
 }
 
-@media (min-width:393px) and (max-width: 767px) {
+
+@media (max-width:767px) {
     .headerContainer {
         border-bottom: 1px solid #000;
     }
@@ -210,7 +215,7 @@
 
     .navStyle {
         position: absolute;
-        width: 50%;
+        width: 100%;
         height: 100%;
         margin-right: 30px;
     }
@@ -221,7 +226,7 @@
         text-align: center;
         justify-content: center;
         align-items: center;
-        width: 500px;
+        width: 100%;
         position: absolute;
         background: #f9f1a8;
         color: #fff;
@@ -234,151 +239,11 @@
     }
 
     [data-lang='Arabic'] .navStyle ul.show {
-        right: -22px;
+        right: -42px;
     }
 
     [data-lang='English'] .navStyle ul.show {
-        left: 10px;
-    }
-
-    [data-lang='English'] .navStyle {
-        margin-right: 10px;
-    }
-
-    [data-lang='Arabic'] .navStyle {
-        margin-left: 10px;
-    }
-
-    [data-theme='Dark'] .navStyle ul.show {
-        background-color: var(--background);
-        border: 0.5px solid #fff;
-        box-shadow: 0 0 18px -5px #fff;
-    }
-
-    .navStyle ul.show li:not(:last-child) {
-        border-bottom: 1px solid var(--main-bg-dark-color);
-        display: block;
-        width: 100%;
-        position: relative;
-        height: 100%;
-        margin: 0 0 20px;
-
-    }
-
-    [data-theme='Dark'] .navStyle ul.show li:not(:last-child) {
-        border-bottom: 1px solid var(--main-bg-light-color);
-    }
-
-    .icon a {
-        position: relative;
-        display: block;
-        width: 100%;
-        height: 100%;
-    }
-
-    .icon a img {
-        position: absolute;
-        left: 0;
-
-    }
-
-    .navStyle ul {
-        display: none;
-    }
-
-
-    [data-lang='English'] .searchIcon {
-
-        left: 50%;
-        top: 1px;
-        transform: translateX(-50%);
-
-    }
-
-    [data-lang='Arabic'] .searchIcon {
-
-        right: 50%;
-        top: 1px;
-        transform: translateX(50%);
-    }
-
-    .headerContainer {
-        justify-content: space-between;
-        position: relative;
-        height: 100px;
-        width: 100%;
-    }
-}
-
-@media (max-width:392px) {
-    .headerContainer {
-        border-bottom: 1px solid #000;
-    }
-
-    [data-theme='Dark'] .headerContainer {
-        border-bottom: 1px solid #fff;
-
-    }
-
-    .headerContainer ul li {
-        margin-left: 0;
-    }
-
-    .burger {
-        display: block;
-        position: absolute;
-        margin-bottom: 20px;
-
-    }
-
-
-    [data-lang='Arabic'] .burger {
-        left: 0;
-    }
-
-    [data-lang='English'] .burger {
-        right: 0;
-    }
-
-    .icon {
-        position: relative;
-        left: 0;
-        width: 50%;
-        margin-top: 20px;
-        height: 100%;
-    }
-
-    .navStyle {
-        position: absolute;
-        width: 50%;
-        height: 100%;
-        margin-right: 30px;
-    }
-
-    .navStyle ul.show {
-        display: flex;
-        flex-direction: column;
-        text-align: center;
-        justify-content: center;
-        align-items: center;
-        width: 345px;
-        position: absolute;
-        background: #f9f1a8;
-        color: #fff;
-        z-index: 1000;
-        padding: 20px;
-        height: 400px;
-        border: 0.5px solid #000;
-        box-shadow: 0 0 11px 0px #000;
-        top: 9px;
-    }
-
-    [data-lang='Arabic'] .navStyle ul.show {
-        right: -22px;
-    }
-
-    [data-lang='English'] .navStyle ul.show {
-        left: 10px;
+        left: -12px;
     }
 
     [data-lang='English'] .navStyle {
@@ -450,6 +315,7 @@
     }
 
     .closeIcon {
+        display: block;
         position: relative;
         z-index: 1000;
         left: -30px;
@@ -460,19 +326,4 @@
     [data-lang='Arabic'] .closeIcon {
         left: 35px;
     }
-}
-
-@media (min-width:393px) and (max-width: 767px) {
-    .closeIcon {
-        position: relative;
-        z-index: 1000;
-        left: -30px;
-        top: -9px;
-        cursor: pointer;
-    }
-
-    [data-lang='Arabic'] .closeIcon {
-        left: 35px;
-    }
-
 }
