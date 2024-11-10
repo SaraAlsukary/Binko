@@ -1,0 +1,1 @@
+import{j as u}from"./index-pwcZkbmx.js";const i="_inputStyle_1em65_1",l={inputStyle:i},{inputStyle:r}=l,m=({value:t,type:n,placeholder:s,style:e,onFocus:p,onChange:o})=>u.jsx("input",{value:t,type:n,style:e,onChange:o,onFocus:p,className:r,placeholder:s});export{m as I};
