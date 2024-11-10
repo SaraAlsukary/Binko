@@ -1,1 +1,0 @@
-import{j as u}from"./index-pwcZkbmx.js";const l="_buttonStyle_26fe6_1",r={buttonStyle:l},{buttonStyle:b}=r,y=({children:t,style:o,className:n,onClick:s,disabled:e})=>u.jsx("button",{disabled:e,onClick:s,style:o,className:` ${b} ${n}`,children:t});export{y as B};
