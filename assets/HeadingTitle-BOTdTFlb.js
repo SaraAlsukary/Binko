@@ -1,1 +1,0 @@
-import{a as t,j as a}from"./index-CAMuQ_jT.js";const r="_headingContainer_1dp2l_1",o="_arabic_1dp2l_12",c={headingContainer:r,arabic:o},{headingContainer:n,arabic:g}=c,d=({children:e})=>{const{language:i}=t(s=>s.language);return a.jsx("div",{className:i==="English"?`${n}`:`${n} ${g}`,children:a.jsx("h2",{children:e})})};export{d as H};
