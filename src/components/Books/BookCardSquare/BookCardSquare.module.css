@@ -97,7 +97,7 @@
 
 @media (max-width:767px) {
     .booCard {
-        width: 100%;
+        width: 360px;
     }
 
     .booCard .pic {
