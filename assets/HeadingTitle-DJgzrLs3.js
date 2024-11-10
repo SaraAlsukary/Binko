@@ -1,1 +1,0 @@
-import{j as n}from"./index-D5V6vOFL.js";const t="_headingContainer_1g38d_1",i={headingContainer:t},{headingContainer:a}=i,o=({children:e})=>n.jsx("div",{className:a,children:n.jsx("h2",{children:e})});export{o as H};
