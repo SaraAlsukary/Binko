@@ -5,6 +5,7 @@ import { PersistGate } from 'redux-persist/integration/react';
 import { persistor, store } from './store';
 import { Provider } from 'react-redux';
 import './index.css';
+import "./services/axios-global.js";
 
 
 createRoot(document.getElementById('root')!).render(

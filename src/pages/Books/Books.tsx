@@ -7,17 +7,25 @@ import { settingsBackground, settingsBox, settingsSquare } from '@utils/settings
 import BooksBackground from '@components/Books/BooksBackground/BooksBackground';
 import BookCardList from '@components/Books/BookCardList/BookCardList';
 import HeadingTitle from '@components/feedback/HeadingTitle/HeadingTitle';
-import { useAppSelector } from '@hooks/app';
+import { useAppDispatch, useAppSelector } from '@hooks/app';
+import actGetBooks from '@store/booksSlice/act/actGetBooks';
 import image from '@assets/imgs/s.jpg';
 import './BooksSlider.css'
+import { TBooks } from '@customtypes/booksTypes';
+import { useEffect } from 'react';
 const { bookContainer, box, square } = styles;
 
 const Books = () => {
-    const { books } = useAppSelector(state => state);
+    const dispatch = useAppDispatch();
+    const { books } = useAppSelector(state => state.books);
+    // console.log(books);
     const { language } = useAppSelector(state => state.language);
-    const booksCards = books.map((book => <BookCard key={book.id} {...book} />))
-    const booksCardsSquare = books.map((book => <BookCardSquare key={book.id} {...book} />));
-    const booksCardsBackground = books.map((book => <BooksBackground key={book.id} img={image} />));
+    const booksCards = books.map(((book: TBooks) => <BookCard key={book.id} {...book} />))
+    const booksCardsSquare = books.map(((book: TBooks) => <BookCardSquare key={book.id} {...book} />));
+    const booksCardsBackground = books.map(((book: TBooks) => <BooksBackground key={book.id} img={image} />));
+    useEffect(() => {
+        dispatch(actGetBooks())
+    }, [])
     return (
 
         <div className={bookContainer}>

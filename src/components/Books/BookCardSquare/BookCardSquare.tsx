@@ -1,22 +1,22 @@
 import styles from './BookCardSquare.module.css';
 import { Button } from '@components/feedback';
-import { TBooks } from '@customtypes/booksType';
+import { TBooks } from '@customtypes/booksTypes';
 import { useAppSelector } from '@hooks/app';
 import { useNavigate } from 'react-router-dom';
 const { pic, text, booCard } = styles
 
-const BookCardSquare = ({ img, Author, title, desc, id }: TBooks) => {
+const BookCardSquare = ({ image, description, user, name, id }: TBooks) => {
     const navigate = useNavigate();
     const { language } = useAppSelector(state => state.language);
     return (
         <div onClick={() => navigate(`${id}`)} className={booCard} >
             <div className={pic}>
-                <img src={img} alt="" />
+                <img src={image} alt="" />
             </div>
             <div className={text}>
-                <h3>{title}</h3>
-                <span>{Author}</span>
-                <p>{desc}</p>
+                <h3>{name}</h3>
+                <span>{user}</span>
+                <p>{description}</p>
                 <Button>
                     {language === 'Arabic' ? 'قراءة' : 'Read'}
                 </Button >

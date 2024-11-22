@@ -1,23 +1,23 @@
 import { Button } from '@components/feedback';
 import styles from './BookCard.module.css';
-import { TBooks } from '@customtypes/booksType';
+import { TBooks } from '@customtypes/booksTypes';
 import { useNavigate } from 'react-router-dom';
 import { useAppSelector } from '@hooks/app';
 const { pic, text, paraga, info, btnCard, booCard } = styles;
-const BookCard = ({ img, desc, Author, title, id }: TBooks) => {
+const BookCard = ({ image, description, user, name, file, id }: TBooks) => {
     const navigate = useNavigate();
     const { language } = useAppSelector(state => state.language);
 
     return (
         <div className={booCard} >
             <div className={pic}>
-                <img src={img} alt="" />
+                <img src={file ? file : image} alt="" />
             </div>
             <div className={text}>
                 <div onClick={() => navigate(`${id}`)} className={paraga}>
-                    <h3>{title}</h3>
-                    <span>{Author}</span>
-                    <p>{desc}</p>
+                    <h3>{name}</h3>
+                    <span>{user}</span>
+                    <p>{description}</p>
                     <div className={btnCard}>
                         <Button>
                             {language === 'Arabic' ? 'قراءة' : 'Read'}
@@ -25,8 +25,8 @@ const BookCard = ({ img, desc, Author, title, id }: TBooks) => {
                     </div>
                 </div>
                 <div className={info}>
-                    <h3>{title}</h3>
-                    <span>{Author}</span>
+                    <h3>{name}</h3>
+                    <span>{user}</span>
                     <div className={btnCard}>
                         <Button>
                             {language === 'Arabic' ? 'قراءة' : 'Read'}
