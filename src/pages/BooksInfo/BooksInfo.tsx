@@ -18,8 +18,9 @@ const BooksInfo = () => {
   const { id }: any = useParams();
   const param: any = useParams();
   console.log(param);
-  const { books, chapters } = useAppSelector(state => state);
-  const bookInfo = books.find(book => book.id == id);
+  const { chapters } = useAppSelector(state => state);
+  const { books } = useAppSelector(state => state);
+  const bookInfo = books.books.find(book => book.id == id);
   const navigate = useNavigate();
   const activeHandler = (e: any) => {
     (e.target as Element).classList.toggle(active);
@@ -51,7 +52,7 @@ const BooksInfo = () => {
       var inpActive = document.querySelector(`.${inputField}.${active}`);
       var spanActive = document.querySelector(`span.${active}`);
 
-      if (span?.contains(e.target)) {
+      if (span?.contains(e.target) || inpActive?.contains(e.target)) {
         inp?.classList.add(active);
         span?.classList.add(active);
 
@@ -133,13 +134,13 @@ const BooksInfo = () => {
     <Container className={bookCont} >
       <div className={left}>
         <div className={pic}>
-          <img src={bookInfo?.img} alt="" />
+          <img src={bookInfo?.image} alt="" crossOrigin="anonymous" />
         </div>
         <div className={author}>
           <h3>{language === 'English' ? `About The Author` : `عن الكاتب`}</h3>
           <div className={authInfo}>
             <div className={photo}>
-              <img src={bookInfo?.img} alt="" />
+              <img src={bookInfo?.image} alt="" />
             </div>
             <div className={nameAuth}>Author Name</div>
           </div>
@@ -150,15 +151,15 @@ const BooksInfo = () => {
       </div>
       <div className={right}>
         <div className={up}>
-          <h1>{bookInfo?.title}</h1>
-          <span>{bookInfo?.Author}</span>
+          <h1>{bookInfo?.name}</h1>
+          <span>{bookInfo?.user}</span>
           <div className={cate}>
             <p>Drama</p>
             <p>Advanture</p>
             <p>Romance</p>
           </div>
           <p className={loves}>{language === 'English' ? `200 Likes` : ` 200 اعجاب `} </p>
-          <p className={desc}>{bookInfo?.desc}</p>
+          <p className={desc}>{bookInfo?.description}</p>
           <ul>
             <li onClick={(e) => activeHandler(e)}><p>{language === 'English' ? `Save` : `حفظ`} </p><div className={icons}>
               <div className={activeIcon}><BookMarkWhite style={{ width: '20px' }} /> </div><div className={icon}><BookMark style={{ width: '20px' }} /></div></div></li>

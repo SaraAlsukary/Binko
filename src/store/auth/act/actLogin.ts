@@ -13,7 +13,7 @@ type TResponse = {
         username: string;
         password: string;
     };
-    accessToken: string;
+    token: string;
 };
 
 const actLogin = createAsyncThunk(
@@ -22,7 +22,11 @@ const actLogin = createAsyncThunk(
         const { rejectWithValue } = thunk;
 
         try {
-            const res = await axios.post<TResponse>("login/", formData);
+            const res = await axios.post<TResponse>("login/", JSON.stringify(formData), {
+                headers: { 'Content-Type': 'application/json' },
+                withCredentials: true
+            }
+            );
             return res.data;
         } catch (error) {
             return rejectWithValue(axiosErrorHandler(error));

@@ -1,7 +1,6 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 import axiosErrorHandler from '../../../utils/axiosErrorHandler';
-import { useNavigate } from "react-router-dom";
 type TFormData = {
     name: string;
     username: string;
@@ -14,11 +13,10 @@ const actCreateAccount = createAsyncThunk(
         const { rejectWithValue } = thunk;
 
         try {
-            const res = await axios.post("create-user/", formData);
-            if (res.data) {
-                const navigate = useNavigate();
-                navigate('/Binko/')
-            }
+            const res = await axios.post("create-user/", JSON.stringify(formData), {
+                headers: { 'Content-Type': 'application/json' },
+                withCredentials: true
+            });
             return res.data;
 
 

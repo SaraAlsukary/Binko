@@ -11,7 +11,7 @@ const BookCard = ({ image, description, user, name, file, id }: TBooks) => {
     return (
         <div className={booCard} >
             <div className={pic}>
-                <img src={file ? file : image} alt="" />
+                <img src={file ? file : image} alt="" crossOrigin='anonymous' />
             </div>
             <div className={text}>
                 <div onClick={() => navigate(`${id}`)} className={paraga}>

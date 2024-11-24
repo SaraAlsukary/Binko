@@ -30,11 +30,11 @@ const rootPersistConfig = {
     whitelist: ["language", "theme", "addChapter", "addBook"],
 };
 
-// const authPersistConfig = {
-//     key: "language",
-//     storage,
-//     language: ["user", "accessToken"],
-// };
+const authPersistConfig = {
+    key: "auth",
+    storage,
+    whitelist: ["user", "accessToken"],
+};
 
 // const cartPersistConfig = {
 //     key: "cart",
@@ -56,7 +56,7 @@ const rootReducer = combineReducers({
     theme: theme,
     addChapter: addChapter,
     addBook: addBook,
-    auth,
+    auth: persistReducer(authPersistConfig, auth),
     books,
     chapters,
     comments

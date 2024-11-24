@@ -37,8 +37,10 @@ const authSlice = createSlice({
             state.loading = "pending";
             state.error = null;
         });
-        builder.addCase(actCreateAccount.fulfilled, (state) => {
+        builder.addCase(actCreateAccount.fulfilled, (state, action) => {
             state.loading = "succeeded";
+            state.accessToken = action.payload.token;
+
         });
         builder.addCase(actCreateAccount.rejected, (state, action) => {
             state.loading = "failed";
@@ -54,7 +56,7 @@ const authSlice = createSlice({
         });
         builder.addCase(actLogin.fulfilled, (state, action) => {
             state.loading = "succeeded";
-            state.accessToken = action.payload.accessToken;
+            state.accessToken = action.payload.token;
             state.user = action.payload.user;
         });
         builder.addCase(actLogin.rejected, (state, action) => {

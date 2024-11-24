@@ -18,7 +18,6 @@ const { bookContainer, box, square } = styles;
 const Books = () => {
     const dispatch = useAppDispatch();
     const { books } = useAppSelector(state => state.books);
-    // console.log(books);
     const { language } = useAppSelector(state => state.language);
     const booksCards = books.map(((book: TBooks) => <BookCard key={book.id} {...book} />))
     const booksCardsSquare = books.map(((book: TBooks) => <BookCardSquare key={book.id} {...book} />));
