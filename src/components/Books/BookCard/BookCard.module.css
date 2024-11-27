@@ -45,7 +45,10 @@
 
 }
 
-
+.booCard .text button,
+.booCard .info button {
+    color: #000;
+}
 
 .booCard .text .paraga {
     display: flex;

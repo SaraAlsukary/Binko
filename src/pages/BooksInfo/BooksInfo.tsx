@@ -1,5 +1,5 @@
 import { useAppSelector } from "@hooks/app";
-import { useNavigate, useParams } from "react-router-dom"
+import { useNavigate, useParams } from "react-router-dom";
 import style from './BooksInfo.module.css';
 import { Container } from "react-bootstrap";
 import HeadingTitle from "@components/feedback/HeadingTitle/HeadingTitle";

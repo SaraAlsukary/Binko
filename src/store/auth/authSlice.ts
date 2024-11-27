@@ -6,6 +6,8 @@ import { isString } from "@customtypes/isString";
 
 interface IAuthState {
     user: {
+        id?: number,
+        image?: string,
         name: string;
         username: string;
         password: string;

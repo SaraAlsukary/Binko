@@ -9,7 +9,7 @@ const BooksSearch = () => {
     const [filt, setFilt] = useState('');
     const { books } = useAppSelector(state => state);
     // const { language } = useAppSelector(state => state.language);
-    const result = books.filter((book => book.title.toLowerCase().includes(filt) || book.Author.toLowerCase().includes(filt.toLowerCase())));
+    const result = books.books.filter((book => book.name.toLowerCase().includes(filt) || book.user.toLowerCase().includes(filt.toLowerCase())));
     const booksList = result.map((book) => <Col className='mb-3'><BookCardSquare key={book.id} {...book} /></Col>);
     return (
         <Container className='mt-4'>

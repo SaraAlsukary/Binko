@@ -6,15 +6,15 @@ import { Outlet } from "react-router-dom";
 
 
 const HomePage = () => {
-  const { authState } = useAppSelector(state => state.auth);
+  const { accessToken } = useAppSelector(state => state.auth);
 
   return (
     <>
       <Header />
-      <div>
-        <Outlet />
-      </div>
-      {authState ? <Menu /> : ''}
+      {/* <div> */}
+      <Outlet />
+      {/* </div> */}
+      {accessToken ? <Menu /> : ''}
 
       <Footer />
 

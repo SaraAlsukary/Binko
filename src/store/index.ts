@@ -13,6 +13,7 @@ import storage from "redux-persist/lib/storage";
 import auth from "./auth/authSlice";
 import books from "./booksSlice/booksSlice";
 import language from "./languageSlice/languageSlice";
+import favorite from "./Favorite/favoriteSlice";
 import theme from "./themeSlice/themeSlice";
 import chapters from "./chaptersSlice/chaptersSlice";
 import comments from "./commentsSlice/commentsSlice";
@@ -58,6 +59,7 @@ const rootReducer = combineReducers({
     addBook: addBook,
     auth: persistReducer(authPersistConfig, auth),
     books,
+    favorite,
     chapters,
     comments
 });

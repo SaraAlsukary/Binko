@@ -8,36 +8,43 @@ import { addBook } from "@store/addBookSlice/addBookSlice";
 
 const { addBooksContainer, cont, controlBtn, input, pic, img, bookInfo, } = Styles;
 const AddBook = () => {
-    const [imageFile, setImageFile] = useState('');
-    const [file, setFile] = useState('');
-    const [title, setTitle] = useState('');
-    const [desc, setDesc] = useState('');
+    const formData = new FormData;
+    const formDataInfo = new FormData;
+    const [imageFile, setImageFile] = useState(formData);
+    const [image, setImage] = useState('');
+    const [name, setName] = useState('');
+    const [description, setDescription] = useState('');
     const dispatch = useAppDispatch();
     const { language } = useAppSelector(state => state.language);
     const { books } = useAppSelector(state => state.addBook);
-    const data = {
-        id: Math.floor(Math.random()),
-        file: imageFile,
-        Author: 'name',
-        title,
-        desc
-    }
+    // const data = {
+    //     id: Math.floor(Math.random()),
+    //     image: imageFile,
+    //     user: 'name',
+    //     name,
+    //     description
+    // }
 
     console.log(books);
 
     const titleHandler = (e: any) => {
-        setTitle(e.target.value);
+        setName(e.target.value);
     }
     const descHandler = (e: any) => {
-        setDesc(e.target.value);
+        setDescription(e.target.value);
     }
     const imageHandler = (e: any) => {
-        setFile(URL.createObjectURL(e.target.files[0]));
-        setImageFile(e.target.files[0]);
-        console.log(file)
+        setImage(URL.createObjectURL(e.target.files[0]));
+        formDataInfo.append('image', e.target.files[0]);
     }
     const addBookToMem = (data: Object) => {
-        dispatch(addBook(data));
+        formDataInfo.append('name', name);
+        formDataInfo.append('description', description);
+
+        dispatch(addBook(formDataInfo));
+        setDescription('');
+        setImage('');
+        setName('');
     }
     return (
         <div className={addBooksContainer}>
@@ -48,7 +55,7 @@ const AddBook = () => {
                         <input id="img" type="file" onChange={imageHandler} />
                         <label htmlFor="img">
                             <div className={img}>
-                                <img src={file} />
+                                <img src={image} />
                                 <label htmlFor="img">
                                     <span>+</span>
                                 </label>
@@ -62,7 +69,7 @@ const AddBook = () => {
                     </div>
                 </div>
                 <div className={controlBtn}>
-                    <SecondaryButton onClick={() => addBookToMem(data)}>{language === 'English' ? 'Save' : 'حفظ'}</SecondaryButton>
+                    <SecondaryButton onClick={() => addBookToMem(formData)}>{language === 'English' ? 'Save' : 'حفظ'}</SecondaryButton>
                     <SecondaryButton>{language === 'English' ? 'Publish' : 'نشر'}</SecondaryButton>
                 </div>
             </Container>

@@ -2,6 +2,41 @@
     padding: 100px 0;
 }
 
+.pic {
+    margin: 0 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pic .img {
+    position: relative;
+    width: 200px;
+    outline: none;
+    border-radius: 50%;
+    height: 200px;
+    border: 1px solid var(--color);
+}
+
+
+
+.pic .img img {
+    transition: .3s;
+    width: 100%;
+    border-radius: 50%;
+    height: 100%;
+    outline: none;
+}
+
+.pic label {
+    cursor: pointer;
+}
+
+.pic .img img:hover {
+    box-shadow: 0 0 12px 4px var(--main-color);
+}
+
 .profileContainer .userName {
     text-align: center;
     margin: 10px 0;
@@ -28,6 +63,7 @@
 }
 
 .settings ul {
+    border-color: var(--main-color);
     gap: 1px;
 }
 
@@ -38,19 +74,4 @@
 .nav-tabs .nav-link.active {
     background-color: var(--main-color);
     color: var(--color);
-}
-
-
-.profileContainer .inputs {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.profileContainer .inputs input {
-    margin-top: 20px;
-}
-
-.profileContainer .inputs input[type='submit'] {
-    background-color: var(--secondary-color);
 }

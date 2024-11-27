@@ -1,9 +1,13 @@
+import Messages from '@components/Chats/Messages/Messages';
 import SuspendPage from '@components/feedback/SuspendPage/SuspendPage';
 import { useAppSelector } from '@hooks/app';
 import { lazy } from 'react';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 const HomePage = lazy(() => import('src/HomePage'));
 const Categories = lazy(() => import('@pages/Categories/Categories'));
+// const ChatsHomepage = lazy(() => import('@pages/Chats/ChatsHomepage'));
+const UserInfo = lazy(() => import('@pages/UserInfo/UserInfo'));
+const Chats = lazy(() => import('@pages/Chats/Chats'));
 const About = lazy(() => import('@pages/About/About'));
 const Login = lazy(() => import('@pages/Login/Login'));
 const News = lazy(() => import('@pages/News/News'));
@@ -85,9 +89,25 @@ const AppRouter = () => {
             path: 'books/:id/:idChapter',
             element: <SuspendPage><Chapters /></SuspendPage>,
         }
+            , {
 
-        ]
+            path: 'userInfo',
+            element: <SuspendPage><UserInfo /></SuspendPage>,
+        }
 
+        ],
+
+    }, {
+        path: '/Binko/chats',
+        element: <SuspendPage><Chats /></SuspendPage>
+        , children: [
+            // {
+            // index: true, element: <ChatsHomepage />,
+            // }
+            {
+                path: ':id',
+                element: <SuspendPage><Messages /></SuspendPage>
+            }]
     }])
     return <RouterProvider router={router} />
 }

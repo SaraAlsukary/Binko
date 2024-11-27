@@ -5,13 +5,7 @@ type TBook = {
 }
 const initialState: TBook = {
     books: [
-        {
-            // id: 0,
-            // Author: '',
-            // img: '',
-            // title: '',
-            // desc: ''
-        }
+
     ]
 }
 const addBookSlice = createSlice({

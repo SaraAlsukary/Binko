@@ -46,7 +46,7 @@ const News = () => {
                 <div className={pic3}>
                     <img src={img3} alt="" />
                     <span></span>
-                    <p>{language === 'English' ? "Pinko offers you a huge library of user books that you can bookmark as favorites in your own library. What are you waiting for, go and create your own library!" : "بينكو يقدم لك مكتبة هائلة من كتب المستخدمين والتي يمكنك جعلها كمرجع لك في مكتبتك الخاصة كمفضلة ماذا تنتظر اذهب وأنشئ مكتبتك الخاصة!"}</p>
+                    <p>{language === 'English' ? "Binko offers you a huge library of user books that you can bookmark as favorites in your own library. What are you waiting for, go and create your own library!" : "بينكو يقدم لك مكتبة هائلة من كتب المستخدمين والتي يمكنك جعلها كمرجع لك في مكتبتك الخاصة كمفضلة ماذا تنتظر اذهب وأنشئ مكتبتك الخاصة!"}</p>
 
                 </div>
             </Container>

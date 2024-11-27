@@ -52,7 +52,7 @@ const Header = () => {
         <header >
             <Container className={headerContainer} >
                 <div className={icon}><NavLink to='/'> <LogoIcon /></NavLink></div>
-                <Search className="showInput" isThereNavigate={true} checkLocate={location.pathname === '/booksSearch' ? true : false} />
+                <Search className="showInput" isThereNavigate={true} checkLocate={location.pathname === '/Binko/booksSearch' ? true : false} />
 
                 <nav className={navStyle} >
                     <ul className={toggle ? `${show}` : ''}>
